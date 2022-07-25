@@ -9,9 +9,9 @@ public class BulletController2 : MonoBehaviour
   
     void Update()
     {
-        bulletController();
+        moveBullet();
     }
-    void bulletController()
+    void moveBullet()
     {
         if (time == 30000)
         {

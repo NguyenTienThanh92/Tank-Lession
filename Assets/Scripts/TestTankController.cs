@@ -18,15 +18,13 @@ public class TestTankController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         tankMove();
         gunRotation();
         gunShoot();
-        //tankRotation();
-
     }
-    void tankMove()
+    private void tankMove()
     {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
@@ -41,7 +39,7 @@ public class TestTankController : MonoBehaviour
 
         
     }
-    void gunRotation()
+    private void gunRotation()
     {
         Vector3 gunDirection = new Vector3(
             Input.mousePosition.x - Screen.width / 2,
@@ -57,10 +55,6 @@ public class TestTankController : MonoBehaviour
             Instantiate(bullet2, transhoot2.transform.position, transhoot2.transform.rotation);
         }
     }
-    //void tankRotation()
-    //{
-    //    Vector3 tankDirection = Vector3.up;
-    //    bodytank.transform.up = tankDirection;
-    //}
+    
 
 }
