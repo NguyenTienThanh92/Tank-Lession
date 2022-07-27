@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7559790307805344425}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: playerbullet
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   smoke: {fileID: 556626985812656721, guid: 4adb528d5fc00b64fa86cfe49cd38341, type: 3}
-  timeLimit: 80
+  timeLimit: 200
 --- !u!61 &-953745669336479361
 BoxCollider2D:
   m_ObjectHideFlags: 0

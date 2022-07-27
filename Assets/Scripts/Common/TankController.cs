@@ -36,7 +36,7 @@ public class TankController : MoveController
         }
         if (collision.gameObject.tag == "Enemy")
         {
-            Debug.Log("Dinh Dan");
+            Destroy(gameObject);
         }
     }
         
