@@ -1,10 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : TankController 
 {
-  
+    public static PlayerController instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+           instance = this;
+        } 
+    }
     void Update()
     {
         float horizontal = Input.GetAxis("Horizontal");

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MoveController : MonoBehaviour
@@ -10,5 +8,4 @@ public class MoveController : MonoBehaviour
     {
         this.transform.position += direction * Time.deltaTime * speed;
     }
-    
 }

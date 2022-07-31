@@ -1,21 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyController : TankController
 {
-    
-    public GameObject Player;
-
     void Update()
     {
-        Vector3 direction = Player.transform.position;
+        var player  = PlayerController.instance.gameObject.transform;
+        Vector3 direction = player.position;
         var gunDirection = direction - transform.position;
 
         Move(gunDirection);
         RotateGun(gunDirection);
 
+<<<<<<< HEAD
         if (Random.Range(0,100) % 1 == 0)
+=======
+        if (Random.Range(0,100) % 60 == 0)
+>>>>>>> main
         {
             Shoot();
         }

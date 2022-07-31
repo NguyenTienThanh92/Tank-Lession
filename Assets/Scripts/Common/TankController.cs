@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TankController : MoveController
@@ -8,7 +6,8 @@ public class TankController : MoveController
     public Transform gun;
     public GameObject bullet;
     public Transform transhoot;
-   
+    public string trigger1;
+    public string trigger2;
     protected override void Move(Vector3 direction)
     {
         if (direction != Vector3.zero)
@@ -23,20 +22,22 @@ public class TankController : MoveController
     }
     public void Shoot()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Instantiate(bullet, transhoot.position, transhoot.rotation);
-        }
+        Instantiate(bullet, transhoot.position, transhoot.rotation);
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == trigger1)
         {
             Destroy(gameObject);
+            GameManager.instance.AddScore();
         }
+<<<<<<< HEAD
         else if (collision.gameObject.tag == "Enemy")
+=======
+        if (collision.gameObject.tag == trigger2)
+>>>>>>> main
         {
-            Destroy(gameObject);
+           // Destroy(gameObject);
         }
     }
         
