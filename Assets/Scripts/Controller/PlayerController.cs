@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : TankController 
@@ -8,7 +6,10 @@ public class PlayerController : TankController
 
     private void Awake()
     {
-        if (instance == null) instance = this;
+        if (instance == null)
+        {
+           instance = this;
+        } 
     }
     void Update()
     {

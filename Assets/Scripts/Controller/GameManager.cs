@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,18 +7,17 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public EnemyController tankEnemy;
     public int scorePlayer;
-    public Text scoreTxt;
+    public Text levelTxt;
     private void Awake()
     {
         if (instance == null) instance = this;
     }
     void Update()
     {
-        scoreTxt.text = "score : " + scorePlayer.ToString();
+        levelTxt.text = "Level : " + scorePlayer.ToString();
     }
-    public void addScore()
+    public void AddScore()
     {
-        scorePlayer += 10;
-
+        scorePlayer += 50;
     }
 }

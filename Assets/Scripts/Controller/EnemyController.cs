@@ -1,15 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyController : TankController
 {
-    
-
-
     void Update()
     {
-       var player  = PlayerController.instance.gameObject.transform;
+        var player  = PlayerController.instance.gameObject.transform;
         Vector3 direction = player.position;
         var gunDirection = direction - transform.position;
 

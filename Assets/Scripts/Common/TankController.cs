@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TankController : MoveController
@@ -31,7 +29,7 @@ public class TankController : MoveController
         if (collision.gameObject.tag == trigger1)
         {
             Destroy(gameObject);
-            GameManager.instance.addScore();
+            GameManager.instance.AddScore();
         }
         if (collision.gameObject.tag == trigger2)
         {
