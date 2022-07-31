@@ -5,17 +5,18 @@ using UnityEngine;
 public class EnemyController : TankController
 {
     
-    public GameObject Player;
+
 
     void Update()
     {
-        Vector3 direction = Player.transform.position;
+       var player  = PlayerController.instance.gameObject.transform;
+        Vector3 direction = player.position;
         var gunDirection = direction - transform.position;
 
         Move(gunDirection);
         RotateGun(gunDirection);
 
-        if (Random.Range(0,100) % 10 == 0)
+        if (Random.Range(0,100) % 60 == 0)
         {
             Shoot();
         }
