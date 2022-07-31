@@ -34,7 +34,7 @@ public class TankController : MoveController
         {
             Destroy(gameObject);
         }
-        if (collision.gameObject.tag == "Enemy")
+        else if (collision.gameObject.tag == "Enemy")
         {
             Destroy(gameObject);
         }
