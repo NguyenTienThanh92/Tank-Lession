@@ -9,11 +9,11 @@ public class BulletController : MoveController
 
     void Update()
     {
-        BulletEx();
+        bulletEx();
         Move(this.transform.up);
     }
     
-    protected virtual void BulletEx()
+    protected virtual void bulletEx()
     {
         if (time == timeLimit)
         {

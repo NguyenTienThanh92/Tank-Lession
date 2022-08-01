@@ -30,6 +30,7 @@ public class TankController : MoveController
         {
             Destroy(gameObject);
             GameManager.instance.AddScore();
+            RespawnController.instance.respawn();
         }
         if (collision.gameObject.tag == trigger2)
         {

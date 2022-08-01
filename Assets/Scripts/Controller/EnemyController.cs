@@ -11,7 +11,7 @@ public class EnemyController : TankController
         Move(gunDirection);
         RotateGun(gunDirection);
 
-        if (Random.Range(0,100) % 60 == 0)
+        if (Random.Range(0,100) % 50 == 0)
         {
             Shoot();
         }
