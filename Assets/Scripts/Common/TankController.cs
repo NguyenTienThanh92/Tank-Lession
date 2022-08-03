@@ -4,10 +4,12 @@ public class TankController : MoveController
 {
     public Transform bodyTank;
     public Transform gun;
-    public GameObject bullet;
+    public BulletController bullet;
     public Transform transhoot;
     public string trigger1;
     public string trigger2;
+    public float hp;
+    public float level;
     protected override void Move(Vector3 direction)
     {
         if (direction != Vector3.zero)
@@ -28,13 +30,11 @@ public class TankController : MoveController
     {
         if (collision.gameObject.tag == trigger1)
         {
-            Destroy(gameObject);
-            GameManager.instance.AddScore();
-            RespawnController.instance.respawn();
+            hp = bullet.CalculateHp(hp, level);
         }
         if (collision.gameObject.tag == trigger2)
         {
-           // Destroy(gameObject);
+            hp = bullet.CalculateHp(hp, level);
         }
     }
         

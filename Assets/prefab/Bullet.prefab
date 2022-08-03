@@ -100,6 +100,7 @@ MonoBehaviour:
   speed: 10
   smoke: {fileID: 556626985812656721, guid: 4adb528d5fc00b64fa86cfe49cd38341, type: 3}
   timeLimit: 200
+  damage: 0
 --- !u!61 &-953745669336479361
 BoxCollider2D:
   m_ObjectHideFlags: 0

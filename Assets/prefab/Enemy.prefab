@@ -184,10 +184,12 @@ MonoBehaviour:
   speed: 1
   bodyTank: {fileID: 4878809939721124425}
   gun: {fileID: 4878809941033586195}
-  bullet: {fileID: 3305471279059944527, guid: 071ac19db1537c443b449b643b85afdc, type: 3}
+  bullet: {fileID: 3305471279059944526, guid: 071ac19db1537c443b449b643b85afdc, type: 3}
   transhoot: {fileID: 4878809940191856645}
   trigger1: Player
   trigger2: Enemy
+  hp: 100
+  level: 1
 --- !u!50 &4878809940173791669
 Rigidbody2D:
   serializedVersion: 4

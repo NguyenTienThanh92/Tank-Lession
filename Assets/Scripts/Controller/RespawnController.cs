@@ -22,7 +22,7 @@ public class RespawnController : MonoBehaviour
     {
         
     }
-    public void  respawn()
+    public void  Respawn()
     {
         Instantiate(enemy, gate.transform.position, gate.transform.rotation);
     }

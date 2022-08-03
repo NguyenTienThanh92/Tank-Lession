@@ -1,15 +1,13 @@
 using UnityEngine;
+using UnityEngine.UI;
+using LTAUnityBase.Base.DesignPattern;
 
 public class PlayerController : TankController 
 {
-    public static PlayerController instance;
-
-    private void Awake()
+    public Text levelTxt;
+    private void Start()
     {
-        if (instance == null)
-        {
-           instance = this;
-        } 
+        Observer.Instance.AddObserver(TOPICNAME.ENEMYDESTROY, LevelUp);
     }
     void Update()
     {
@@ -30,4 +28,15 @@ public class PlayerController : TankController
             Shoot();
         }
     }
+    private void LevelUp(object data)
+    {
+        float levelEnemy = (float)data;
+        level += levelEnemy;
+        levelTxt.text = "Level Player: " + level.ToString();
+    }
+   
+}
+public class Player : SingletonMonoBehaviour<PlayerController>
+{
+
 }

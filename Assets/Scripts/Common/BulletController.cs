@@ -5,6 +5,7 @@ public class BulletController : MoveController
     private float time = 0;
     public GameObject smoke;
     public float timeLimit;
+    public float damage;
 
 
     void Update()
@@ -23,8 +24,14 @@ public class BulletController : MoveController
         time++;
     }
     public void OnTriggerEnter2D(Collider2D collision)
-        {
-          Destroy(gameObject);
-          Instantiate(smoke, this.gameObject.transform.position, this.gameObject.transform.rotation);
-        }
+    {
+        Destroy(gameObject);
+        Instantiate(smoke, this.gameObject.transform.position, this.gameObject.transform.rotation);
+    }
+    public virtual float CalculateHp(float hp, float level)
+    {
+        var hpLeft = hp - (level + damage);
+        Instantiate(smoke, this.gameObject.transform.position, this.gameObject.transform.rotation);
+        return hpLeft;
+    }
 }
