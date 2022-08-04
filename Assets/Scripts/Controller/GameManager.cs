@@ -8,7 +8,8 @@ public class GameManager : MonoBehaviour
     
     public EnemyController tankEnemy;
     public int scorePlayer;
-    public Text levelTxt;
+    public Text scoreTxt;
+    public GameObject gate;
 
     private void Awake()
     {
@@ -16,11 +17,12 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
-        levelTxt.text = "Level : " + scorePlayer.ToString();
+        scoreTxt.text = "Score : " + scorePlayer.ToString();
     }
     public void AddScore(object data)
     {
         scorePlayer += 50;
+        Instantiate(tankEnemy, gate.transform.position, gate.transform.rotation);
     }
 }
 public class GameController : SingletonMonoBehaviour<GameManager>

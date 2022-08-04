@@ -5,6 +5,7 @@ using LTAUnityBase.Base.DesignPattern;
 public class PlayerController : TankController 
 {
     public Text levelTxt;
+    public Text hpTxt;
     private void Start()
     {
         Observer.Instance.AddObserver(TOPICNAME.ENEMYDESTROY, LevelUp);
@@ -27,12 +28,15 @@ public class PlayerController : TankController
         {
             Shoot();
         }
+        {
+            hpTxt.text = "HP : " + hp.ToString();
+        }
     }
     private void LevelUp(object data)
     {
         float levelEnemy = (float)data;
         level += levelEnemy;
-        levelTxt.text = "Level Player: " + level.ToString();
+        levelTxt.text = "Level : " + level.ToString();
     }
    
 }
