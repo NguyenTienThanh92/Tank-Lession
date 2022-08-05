@@ -6,12 +6,23 @@ public class PlayerController : TankController
 {
     public Text levelTxt;
     public Text hpTxt;
+    public Slider slider_hp;
+
+    private void Awake()
+    {
+        slider_hp.maxValue = hp;
+    }
     private void Start()
     {
         Observer.Instance.AddObserver(TOPICNAME.ENEMYDESTROY, LevelUp);
     }
     void Update()
     {
+        slider_hp.value = hp;
+        if (hp <= 0 )
+        {
+            //Destroy(this.gameObject);
+        }
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         Vector3 direction = new Vector3(horizontal, vertical);

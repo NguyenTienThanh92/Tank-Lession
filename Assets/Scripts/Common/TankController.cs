@@ -33,15 +33,17 @@ public class TankController : MoveController
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == trigger1)
+        if (collision.gameObject.tag != this.gameObject.tag)
         {
             hp = bullet1.CalculateHp(hp, level);
             hp = bullet2.CalculateHp(hp, level);
+            Debug.Log("bi ban trigger1");
         }
         if (collision.gameObject.tag == trigger2)
         {
             hp = bullet1.CalculateHp(hp, level);
             hp = bullet2.CalculateHp(hp, level);
+            Debug.Log("bi ban trigger2");
         }
     }
         

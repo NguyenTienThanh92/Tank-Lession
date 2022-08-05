@@ -516,7 +516,7 @@ MonoBehaviour:
   speed: 0.09
   bodyTank: {fileID: 4732491883118861927}
   gun1: {fileID: 4732491882867044899}
-  gun2: {fileID: 4732491882357734690}
+  gun2: {fileID: 4732491882867044899}
   bullet1: {fileID: 3305471279059944526, guid: 071ac19db1537c443b449b643b85afdc, type: 3}
   bullet2: {fileID: 3305471279059944526, guid: 071ac19db1537c443b449b643b85afdc, type: 3}
   transhoot1: {fileID: 4732491882241809150}
