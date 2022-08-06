@@ -35,6 +35,7 @@ public class PlayerController : TankController
             position.y - Screen.height / 2);
 
         RotateGun(gunDirectionmoba);
+
         if (Input.GetMouseButtonDown(0))
         {
             Shoot();

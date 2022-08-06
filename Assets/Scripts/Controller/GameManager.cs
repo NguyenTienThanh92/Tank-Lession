@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Observer.Instance.AddObserver(TOPICNAME.ENEMYDESTROY, AddScore);
+        
     }
     void Update()
     {

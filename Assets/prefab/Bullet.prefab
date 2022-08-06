@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3305471279059944512}
   - component: {fileID: 3305471279059944513}
-  - component: {fileID: 3305471279059944526}
   - component: {fileID: 3305471279059944515}
   - component: {fileID: 3305471279059944514}
+  - component: {fileID: 919592212690261376}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Player
@@ -85,22 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3305471279059944526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3305471279059944527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9feae49a0f28f8419b02e87344ce434, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  smoke: {fileID: 6254580448074793764, guid: ee3838a114889e640bf21752cfbc07d5, type: 3}
-  timeLimit: 200
-  damage: 3
 --- !u!61 &3305471279059944515
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -148,3 +132,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &919592212690261376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3305471279059944527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5490646b539b38245823a7047f58af40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  smoke: {fileID: 300549954086387745, guid: 3ee6e0d870f466e43b3ae9d684e2c4fc, type: 3}
+  timeLimit: 200
+  damage: 10

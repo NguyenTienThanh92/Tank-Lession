@@ -10,8 +10,7 @@ public class BulletController : MoveController
 
     void Update()
     {
-        bulletEx();
-        Move(this.transform.up);
+       
     }
     
     protected virtual void bulletEx()
@@ -30,10 +29,8 @@ public class BulletController : MoveController
     }
     public virtual float CalculateHp(float hp, float level)
     {
-        Debug.LogError(damage + "sat thuong thuc te");
         var hpLeft = hp - (level + damage);
         Debug.LogError(level + damage);
-        Instantiate(smoke, this.gameObject.transform.position, this.gameObject.transform.rotation);
         return hpLeft;
     }
 }

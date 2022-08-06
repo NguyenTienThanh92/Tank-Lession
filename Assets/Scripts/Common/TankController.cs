@@ -14,7 +14,7 @@ public class TankController : MoveController
         {
             bodyTank.up = direction;
         }
-        base.Move(direction);  
+        base.Move(direction);
     }
     protected void RotateGun(Vector3 direction)
     {
@@ -29,7 +29,6 @@ public class TankController : MoveController
         if (collision.gameObject.tag != this.gameObject.tag)
         {
             hp = bullet.CalculateHp(hp, level);
-            Debug.Log("bi ban trigger1");
         }
         //if (collision.gameObject.tag == trigger2)
         //{
