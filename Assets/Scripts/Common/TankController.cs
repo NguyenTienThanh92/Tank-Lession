@@ -29,7 +29,7 @@ public class TankController : MoveController
         if (collision.gameObject.tag != this.gameObject.tag)
         {
             hp = bullet.CalculateHp(hp, level);
-            Debug.Log("bi ban trigger1");
+           // Debug.Log("bi ban trigger1");
         }
         //if (collision.gameObject.tag == trigger2)
         //{

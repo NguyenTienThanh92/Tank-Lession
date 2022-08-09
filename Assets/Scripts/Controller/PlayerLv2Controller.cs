@@ -2,11 +2,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using LTAUnityBase.Base.DesignPattern;
 
-public class PlayerController : TankController 
+public class PlayerLv2Controller : PlayerLv1Controller
 {
-    public Text levelTxt;
-    public Text hpTxt;
-    public Slider slider_hp;
+    //public Text levelTxt;
+    //public Text hpTxt;
+    //public Slider slider_hp;
+    public Transform gun2;
+    public Transform transhoot2;
+    public BulletController bullet2;
 
     private void Awake()
     {
@@ -48,10 +51,17 @@ public class PlayerController : TankController
         float levelEnemy = (float)data;
         level += levelEnemy;
         levelTxt.text = "Level : " + level.ToString();
+        if (level >= 10)
+        {
+            Destroy(this.gameObject);
+            //Instantiate()
+        }
     }
+    
+    
    
 }
-public class Player : SingletonMonoBehaviour<PlayerController>
+public class Playerlv2 : SingletonMonoBehaviour<PlayerLv2Controller>
 {
 
 }

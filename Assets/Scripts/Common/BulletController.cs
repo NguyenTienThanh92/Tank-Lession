@@ -33,7 +33,7 @@ public class BulletController : MoveController
         Debug.LogError(damage + "sat thuong thuc te");
         var hpLeft = hp - (level + damage);
         Debug.LogError(level + damage);
-        Instantiate(smoke, this.gameObject.transform.position, this.gameObject.transform.rotation);
+       // Instantiate(smoke, this.gameObject.transform.position, this.gameObject.transform.rotation);
         return hpLeft;
     }
 }

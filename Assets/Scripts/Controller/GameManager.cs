@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     public void AddScore(object data)
     {
         scorePlayer += 50;
-        Instantiate(tankEnemy, gate.transform.position, gate.transform.rotation);
+        //Instantiate(tankEnemy, gate.transform.position, gate.transform.rotation);
     }
 }
 public class GameController : SingletonMonoBehaviour<GameManager>
