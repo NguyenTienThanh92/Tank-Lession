@@ -1,8 +1,9 @@
 using UnityEngine;
+using LTAUnityBase.Base.DesignPattern;
 
 public class BulletController : MoveController
 {
-    private float time = 0;
+    public float time = 0;
     public GameObject smoke;
     public float timeLimit;
     public float damage;
@@ -18,7 +19,7 @@ public class BulletController : MoveController
     {
         if (time == timeLimit)
         {
-            Destroy(this.gameObject);
+            PoolingObject.DestroyPooling<BulletController>(this);
             Instantiate(smoke, this.gameObject.transform.position, this.gameObject.transform.rotation);
         }
         time++;
@@ -28,12 +29,9 @@ public class BulletController : MoveController
         Destroy(gameObject);
         Instantiate(smoke, this.gameObject.transform.position, this.gameObject.transform.rotation);
     }
-    public virtual float CalculateHp(float hp, float level)
+    public virtual float CalculateHp(float hp)
     {
-        Debug.LogError(damage + "sat thuong thuc te");
-        var hpLeft = hp - (level + damage);
-        Debug.LogError(level + damage);
-       // Instantiate(smoke, this.gameObject.transform.position, this.gameObject.transform.rotation);
+        var hpLeft = hp  - damage;
         return hpLeft;
     }
 }

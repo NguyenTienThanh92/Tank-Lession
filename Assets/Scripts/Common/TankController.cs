@@ -1,4 +1,5 @@
 using UnityEngine;
+using LTAUnityBase.Base.DesignPattern;
 
 public class TankController : MoveController
 {
@@ -20,22 +21,36 @@ public class TankController : MoveController
     {
          gun.up = direction;
     }
-    public void Shoot()
+    protected virtual void Shoot()
     {
-        Instantiate(bullet, transhoot.position, transhoot.rotation);
+        CreatBullet(transhoot);
     }
-    public void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag != this.gameObject.tag)
         {
-            hp = bullet.CalculateHp(hp, level);
-           // Debug.Log("bi ban trigger1");
+            var calculateHP = collision.GetComponent<BulletController>();
+            if (calculateHP is null)
+            {
+                return;
+            }
+            hp = calculateHP.CalculateHp(hp);
         }
-        //if (collision.gameObject.tag == trigger2)
-        //{
-        //    hp = bullet.CalculateHp(hp, level);
-        //    Debug.Log("bi ban trigger2");
-        //}
+       
+    }
+    public BulletController CreatBullet (Transform tranShoot)
+    {
+        BulletController bulletclone = PoolingObject.createPooling<BulletController>(bullet);
+        if (bulletclone == null)
+        {
+            return Instantiate(bullet, tranShoot.position, tranShoot.rotation);
+        }
+        bulletclone.time = 0;
+        bulletclone.transform.position = tranShoot.position;
+        bulletclone.transform.rotation = tranShoot.rotation;
+        bulletclone.damage += level;
+        bulletclone.tag = this.tag;
+        return bulletclone;
     }
         
 }

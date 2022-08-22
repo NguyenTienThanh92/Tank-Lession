@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3305471279059944514}
   m_Layer: 0
   m_Name: Bullet2
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  time: 0
   smoke: {fileID: 556626985812656721, guid: 4adb528d5fc00b64fa86cfe49cd38341, type: 3}
   timeLimit: 200
   damage: 20

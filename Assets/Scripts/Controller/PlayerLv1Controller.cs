@@ -8,6 +8,11 @@ public class PlayerLv1Controller : TankController
     public Text hpTxt;
     public Slider slider_hp;
     public GameObject tankLv2;
+    public GameObject gun1;
+    public GameObject gun2;
+    public Transform transhoot1;
+    public Transform transhoot2;
+    private bool _itemGunUp = false;
 
     private void Awake()
     {
@@ -19,6 +24,9 @@ public class PlayerLv1Controller : TankController
     }
     void Update()
     {
+        gun1.SetActive(_itemGunUp);
+        gun2.SetActive(_itemGunUp);
+
         slider_hp.value = hp;
         if (hp <= 0 )
         {
@@ -49,14 +57,30 @@ public class PlayerLv1Controller : TankController
         float levelEnemy = (float)data;
         level += levelEnemy;
         levelTxt.text = "Level : " + level.ToString();
-        if (level >= 5)
-        {
-            Destroy(this.gameObject);
-        }
     }
-    
-    
-   
+
+    protected override void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+            if (collision.gameObject.tag == "itemGunUp")
+            {
+                _itemGunUp = true;
+                Destroy(collision.gameObject);
+            }
+        
+        
+            base.OnTriggerEnter2D(collision);
+        
+    }
+    protected override void Shoot()
+    {
+        if (_itemGunUp)
+        {
+            CreatBullet(transhoot1);
+            CreatBullet(transhoot2);
+        }
+        base.Shoot();
+    }
 }
 public class Playerlv1 : SingletonMonoBehaviour<PlayerLv1Controller>
 {
