@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     {
         scoreTxt.text = "Score : " + scorePlayer.ToString();
     }
+    // test 2
     public void AddScore(object data)
     {
         scorePlayer += 50;
